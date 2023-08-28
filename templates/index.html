@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Judicial Reform Voting App</title>
+</head>
+<body>
+    <h1>Vote on Judicial Reform Stance</h1>
+    <form method="POST">
+        <select name="stance">
+            {% for stance in stances %}
+                <option value="{{ stance.stance }}">{{ stance.stance }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Vote</button>
+    </form>
+    <h2>Vote Counts:</h2>
+    <ul>
+        {% for stance in stances %}
+            <li>{{ stance.stance }}: {{ stance.votes }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
